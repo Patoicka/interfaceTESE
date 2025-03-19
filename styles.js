@@ -71,9 +71,8 @@ export const styles = StyleSheet.create({
       textAlign: 'justify',
     },
     others: {
-      fontSize: 16,
+      fontSize: 18,
       textAlign: 'justify',
-      paddingHorizontal: 10
     },
   },
 

@@ -1,23 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import { styles } from './styles';
-import { Text, View } from 'react-native';
-import { Header } from './Components/Header';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaView, View, StyleSheet } from 'react-native';
+
+// Importa las pantallas
 import { Home } from './Pages/Home';
-import { NavigateBar } from './Components/NavigateBar';
-import { Footer } from './Components/Footer';
 import { Students } from './Pages/Students';
 import { Events } from './Pages/Events';
 
-export default function App() {
+// Importa los componentes
+import { Header } from './Components/Header';
+import { NavigateBar } from './Components/NavigateBar';
+import { Footer } from './Components/Footer';
+
+// Crea el stack navigator
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.main}>
-      <Header />
-      <NavigateBar />
-      <Home />
-      <Students />
-      <Events />
-      <Footer />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <SafeAreaView style={{ flex: 1 }}>
+
+        <Header />
+
+        <NavigateBar />
+
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Students" component={Students} />
+          <Stack.Screen name="Events" component={Events} />
+        </Stack.Navigator>
+
+        <Footer />
+      </SafeAreaView>
+    </NavigationContainer>
   );
-}
+};
+
+export default App;
