@@ -1,4 +1,4 @@
-import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
+import { height, width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -42,6 +42,14 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 10,
+    },
+    studentForm: {
+      backgroundColor: '#00897B',
+      width: 100,
+      height: 40,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 10,
     }
   },
 
@@ -61,6 +69,12 @@ export const styles = StyleSheet.create({
       fontWeight: 'bold',
       textAlign: 'center',
     },
+    buttonForm: {
+      color: '#fff',
+      fontSize: 15,
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
     welcome: {
       fontSize: 50,
       fontWeight: 'bold',
@@ -73,6 +87,23 @@ export const styles = StyleSheet.create({
     others: {
       fontSize: 18,
       textAlign: 'justify',
+    },
+    span: {
+      paddingVertical: 10,
+      fontSize: 16,
+      fontStyle: 'italic',
+      textAlign: 'center'
+    },
+    label: {
+      fontSize: 16,
+      textAlign: 'center'
+    },
+    warn: {
+      fontSize: 16,
+      textAlign: 'center',
+      color: '#ea0909',
+      fontWeight: 'bold',
+      paddingBottom: 10
     },
   },
 
@@ -93,6 +124,55 @@ export const styles = StyleSheet.create({
       paddingVertical: 50,
       flexDirection: 'row',
       justifyContent: 'space-around'
+    }
+  },
+
+  students: {
+    main: {
+      flex: 1,
+      paddingVertical: 50,
+      justifyContent: 'flex-start',
+      alignItems: 'center'
+    },
+    form: {
+      paddingVertical: 20,
+      alignItems: 'center',
+      justifyContent: 'center',
+
+    },
+  },
+
+  events: {
+    main: {
+      flex: 1,
+      paddingVertical: 50,
+      justifyContent: 'flex-start',
+      alignItems: 'center'
+    },
+    containCards: {
+      flex: 1,
+      width: '100%',
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      justifyContent: 'space-around',
+      backgroundColor: '#03197B'
+    },
+    card: {
+      backgroundColor: '#03197B',
+      
+    },
+  },
+
+  input: {
+    studentForm: {
+      height: 40,
+      borderColor: '#00897B',
+      borderWidth: 1,
+      borderRadius: 10,
+      paddingHorizontal: 10,
+      width: 200,
+      marginVertical: 10,
+      backgroundColor: '#fff'
     }
   },
 
