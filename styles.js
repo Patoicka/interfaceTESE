@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   header: {
     main: {
       flexDirection: 'row',
-      backgroundColor: '#f8f8f8',
+      backgroundColor: '#f0f0f0',
       alignItems: 'center',
       justifyContent: 'space-between',
       paddingHorizontal: 15,
@@ -24,13 +24,12 @@ export const styles = StyleSheet.create({
   //Navigate Bar
   navigate: {
     flexDirection: 'row',
+    width: '100%',
     justifyContent: 'space-between',
-    paddingHorizontal: 10,
+    paddingHorizontal: 8,
+    marginBottom: 10,
     paddingVertical: 10,
-    marginVertical: 10,
     backgroundColor: '#cdeae6',
-    borderRadius: 20,
-    marginHorizontal: 10,
   },
 
   //Buttons
@@ -42,6 +41,7 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 10,
+      marginHorizontal: 2
     },
     studentForm: {
       backgroundColor: '#00897B',
@@ -71,9 +71,15 @@ export const styles = StyleSheet.create({
     },
     buttonForm: {
       color: '#fff',
-      fontSize: 15,
+      fontSize: 20,
       fontWeight: 'bold',
       textAlign: 'center',
+    },
+    buttonCard: {
+      color: '#013731',
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginTop: 10
     },
     welcome: {
       fontSize: 50,
@@ -111,6 +117,7 @@ export const styles = StyleSheet.create({
   body: {
     main: {
       flex: 1,
+      backgroundColor: '#fff',
       paddingHorizontal: 20,
     },
     welcome: {
@@ -145,21 +152,28 @@ export const styles = StyleSheet.create({
   events: {
     main: {
       flex: 1,
-      paddingVertical: 50,
-      justifyContent: 'flex-start',
-      alignItems: 'center'
+      paddingVertical: 10,
+      justifyContent: 'center',
     },
     containCards: {
-      flex: 1,
-      width: '100%',
       flexDirection: 'row',
-      alignItems: 'flex-start',
-      justifyContent: 'space-around',
-      backgroundColor: '#03197B'
     },
     card: {
-      backgroundColor: '#03197B',
-      
+      flex: 1,
+      backgroundColor: '#cdeae6',
+      paddingVertical: 10,
+      marginHorizontal: 5,
+      borderRadius: 10,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    cardHorizontal: {
+      backgroundColor: '#cdeae6',
+      marginVertical: 10,
+      marginHorizontal: 5,
+      borderRadius: 10,
+      justifyContent: 'center',
+      alignItems: 'center'
     },
   },
 
@@ -176,9 +190,49 @@ export const styles = StyleSheet.create({
     }
   },
 
+  modal: {
+    main: {
+      width: '90%',
+      height: '98%',
+      marginVertical: '2%',
+      marginHorizontal: '5%',
+      position: 'absolute',
+      backgroundColor: '#e1dede',
+      justifyContent: 'flex-start',
+      paddingTop: 20,
+      alignItems: 'center',
+      borderRadius: 20,
+    },
+    text: {
+      tittle: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        textAlign: 'center',
+      }
+    },
+  },
+
+  modalEvent: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+
+  card: {
+    backgroundColor: '#fff',
+    flex: 1,
+    width: '96%',
+    marginVertical: 5,
+    padding: 10,
+    borderRadius: 10,
+    justifyContent: 'center',
+    position: 'relative',
+  },
+
   footer: {
     main: {
-      backgroundColor: '#f8f8f8',
+      backgroundColor: '#f0f0f0',
       alignItems: 'center',
       paddingVertical: 10,
     }
