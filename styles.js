@@ -1,24 +1,46 @@
-import { height, width } from '@fortawesome/free-brands-svg-icons/fa42Group';
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
 
-  // Contenedores
+  // Contenedor principal
   main: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  container: {
+    flex: 1,
     backgroundColor: '#fff',
-    paddingTop: 50,
+    width: '100%',
+    maxWidth: '500px',
+    borderColor: '#000000',
+    backgroundColor: '#F2F2F2',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderStyle: 'solid',
+  },
+
+  body: {
+    flexGrow: 1,
+    maxHeight: 580,
+    height: height * 1,
+    alignItems: 'stretch',
+    backgroundColor: '#F2F2F2',
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
+    paddingHorizontal: 10,
   },
 
   header: {
-    main: {
-      flexDirection: 'row',
-      backgroundColor: '#f0f0f0',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      paddingHorizontal: 15,
-      paddingVertical: 10,
-    }
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    justifyContent: 'space-around',
+    width: '100%',
+    paddingTop: 30,
+    paddingBottom: 10
   },
 
   //Navigate Bar
@@ -26,22 +48,21 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
-    paddingHorizontal: 8,
-    marginBottom: 10,
-    paddingVertical: 10,
+    padding: 10,
+
     backgroundColor: '#cdeae6',
+
   },
 
   //Buttons
   button: {
     navigate: {
       backgroundColor: '#00897B',
-      width: 120,
+      width: 110,
       height: 50,
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 10,
-      marginHorizontal: 2
     },
     studentForm: {
       backgroundColor: '#00897B',
@@ -56,7 +77,8 @@ export const styles = StyleSheet.create({
   // Textos
   text: {
     header: {
-      fontSize: 30,
+      width: 170,
+      fontSize: 20,
       fontWeight: 'bold',
       textAlign: 'center',
     },
@@ -76,15 +98,15 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
     },
     buttonCard: {
-      color: '#013731',
       fontSize: 20,
-      fontWeight: 'bold',
-      marginTop: 10
+      fontWeight: 'bold'
+
     },
     welcome: {
       fontSize: 50,
       fontWeight: 'bold',
       textAlign: 'center',
+      paddingVertical: 10,
     },
     description: {
       fontSize: 22,
@@ -113,35 +135,9 @@ export const styles = StyleSheet.create({
     },
   },
 
-  // Elementos
-  body: {
-    main: {
-      flex: 1,
-      backgroundColor: '#fff',
-      paddingHorizontal: 20,
-    },
-    welcome: {
-      flex: 1,
-      alignItems: 'start',
-      borderRadius: 10,
-      width: '100%',
-      paddingTop: 10,
-    },
-    icon: {
-      paddingVertical: 50,
-      flexDirection: 'row',
-      justifyContent: 'space-around'
-    }
-  },
-
   students: {
-    main: {
-      flex: 1,
-      paddingVertical: 50,
-      justifyContent: 'flex-start',
-      alignItems: 'center'
-    },
     form: {
+      height: height * 0.5,
       paddingVertical: 20,
       alignItems: 'center',
       justifyContent: 'center',
@@ -149,31 +145,44 @@ export const styles = StyleSheet.create({
     },
   },
 
+
   events: {
-    main: {
-      flex: 1,
-      paddingVertical: 10,
-      justifyContent: 'center',
-    },
     containCards: {
+      justifyContent: 'center',
+      borderRadius: 15,
+      backgroundColor: '#fff',
+      padding: 5
+    },
+    containRow: {
       flexDirection: 'row',
+      maxWidth: '100%',
+      backgroundColor: '#fff',
+      borderRadius: 15,
+      marginHorizontal: 5,
+      justifyContent: 'center',
     },
     card: {
-      flex: 1,
-      backgroundColor: '#cdeae6',
-      paddingVertical: 10,
-      marginHorizontal: 5,
-      borderRadius: 10,
+      width: '50%',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      borderColor: '#000000',
+      borderWidth: 1,
+      borderRadius: 15,
+      borderStyle: 'solid',
+      padding: 10,
+      marginHorizontal: 5
     },
     cardHorizontal: {
-      backgroundColor: '#cdeae6',
-      marginVertical: 10,
-      marginHorizontal: 5,
-      borderRadius: 10,
+      width: '100%',
       justifyContent: 'center',
-      alignItems: 'center'
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      borderColor: '#000000',
+      borderWidth: 1,
+      borderRadius: 15,
+      borderStyle: 'solid',
+      padding: 10,
+      marginTop: 10
     },
   },
 
@@ -192,16 +201,19 @@ export const styles = StyleSheet.create({
 
   modal: {
     main: {
-      width: '90%',
-      height: '98%',
-      marginVertical: '2%',
-      marginHorizontal: '5%',
+      height: '95%',
+      width: '100%',
+      overflow: 'hidden',
+      marginVertical: height * 0.02,
       position: 'absolute',
       backgroundColor: '#e1dede',
-      justifyContent: 'flex-start',
-      paddingTop: 20,
-      alignItems: 'center',
+      justifyContent: 'center',
       borderRadius: 20,
+    },
+    children: {
+      flexGrow: 1,
+      height: '100%',
+      justifyContent: 'center'
     },
     text: {
       tittle: {
@@ -212,30 +224,24 @@ export const styles = StyleSheet.create({
     },
   },
 
-  modalEvent: {
-    flex: 1,
+  card: {
+    height: 90,
+    padding: 10,
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 10,
-  },
-
-  card: {
+    marginHorizontal: 5,
     backgroundColor: '#fff',
-    flex: 1,
-    width: '96%',
-    marginVertical: 5,
-    padding: 10,
-    borderRadius: 10,
-    justifyContent: 'center',
-    position: 'relative',
+    borderRadius: 15
   },
 
   footer: {
-    main: {
-      backgroundColor: '#f0f0f0',
-      alignItems: 'center',
-      paddingVertical: 10,
-    }
+    height: 50,
+    backgroundColor: '#fff',
+    borderTopColor: '#000000',
+    borderTopWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 
 });

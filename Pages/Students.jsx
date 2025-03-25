@@ -20,13 +20,10 @@ export const Students = () => {
     };
 
     return (
-        <View style={styles.body.main}>
-            <Text style={styles.text.welcome}>
-                Estudiantes
-            </Text>
-            <View style={styles.students.main}>
-                <Text style={styles.text.span}>
-                    Ingresar los datos del estudiante
+        <>
+            <View style={styles.body}>
+                <Text style={styles.text.welcome}>
+                    Estudiantes
                 </Text>
                 <View style={styles.students.form}>
                     <Text style={styles.text.label}> Matricula </Text>
@@ -43,6 +40,6 @@ export const Students = () => {
                     </TouchableOpacity>
                 </View>
             </View>
-        </View >
+        </>
     )
 }

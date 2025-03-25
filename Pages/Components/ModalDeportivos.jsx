@@ -44,7 +44,7 @@ export const ModalDeportivos = ({ onView, tittle, onCancel }) => {
 
     return (
         <Modal onView={onView} tittle={tittle} onCancel={onCancel}>
-            <View style={styles.modalEvent}>{renderEvents}</View>
+            {renderEvents}
         </Modal>
     );
 };

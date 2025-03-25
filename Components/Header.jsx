@@ -1,14 +1,14 @@
-import { Image, Text, View } from "react-native";
+import { Image, Text, View, SafeAreaView } from "react-native";
 import { styles } from "../styles";
 
 export const Header = () => {
     return (
-        <View style={styles.header.main}>
+        <SafeAreaView style={styles.header}>
             <Image style={{ height: 70, width: 70 }} source={require('../assets/images/teseLogo.png')} />
             <Text style={styles.text.header}>
-                TESE
+                Tecnologico de Estudios Superiores de Ecatepec
             </Text>
             <Text style={{ height: 70, width: 70 }} />
-        </View>
+        </SafeAreaView>
     );
 };

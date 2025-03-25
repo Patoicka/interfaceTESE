@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { SafeAreaView, View, StyleSheet } from 'react-native';
+import { View, ScrollView, SafeAreaView } from 'react-native';
 
 import { Home } from './Pages/Home';
 import { Students } from './Pages/Students';
@@ -12,6 +12,7 @@ import { NavigateBar } from './Components/NavigateBar';
 import { Footer } from './Components/Footer';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import { styles } from './styles';
 
 const Stack = createStackNavigator();
 
@@ -19,27 +20,24 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <SafeAreaView style={{ flex: 1, paddingTop: 40 }}>
-
-          <Header />
-
-          <View style={{ width: '100%', alignItems: 'center' }}>
+        <View style={styles.main}>
+          <SafeAreaView style={styles.container}>
+            <Header />
             <NavigateBar />
-          </View>
+            <ScrollView contentContainerStyle={styles.body}>
+              <Stack.Navigator
+                initialRouteName="Home"
+                screenOptions={{ headerShown: false }}
+              >
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="Students" component={Students} />
+                <Stack.Screen name="Events" component={Events} />
+              </Stack.Navigator>
+            </ScrollView>
+            <Footer />
+          </SafeAreaView>
 
-          <Stack.Navigator
-            initialRouteName="Home"
-            screenOptions={{
-              headerShown: false,
-            }}
-          >
-            <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="Students" component={Students} />
-            <Stack.Screen name="Events" component={Events} />
-          </Stack.Navigator>
-
-          <Footer />
-        </SafeAreaView>
+        </View>
       </NavigationContainer>
     </Provider>
   );

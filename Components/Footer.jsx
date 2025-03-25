@@ -4,7 +4,7 @@ import { styles } from '../styles';
 
 export const Footer = () => {
     return (
-        <View style={styles.footer.main}>
+        <View style={styles.footer}>
             <Text style={styles.text.footer}>
                 TECNOLOGICO DE ESTUDIOS SUPERIORES DE ECATEPEC
             </Text>
